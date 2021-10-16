@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    
+    "data": {"url": "https://raw.githubusercontent.com/DunithDeSilva/Assignment2_Data/main/2021_population.csv"},
+    "hconcat": [{
+      "mark": "bar",
+      "transform": [{
+        "filter": {"param": "brush"}
+      }],
+      "encoding": {
+        "y": {
+          "field": "Country"
+        },
+        "x": {"aggregate": "sum","field": "growth", "title": "growth"
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "growth", "type": "quantitative", "format": ","},
+          {"field": "Population", "type": "quantitative", "format": ","}
+          
+        ]
+      }
+    }, {
+      "height": 200,
+      "width": 50,
+      "params": [{
+        "name": "brush",
+        "select": {
+          "type": "interval",
+          "encodings": ["y"]
+        }
+      }],
+      "mark": "bar",
+      "height": {"step": 10},
+      "encoding": {
+        "y": {
+          "field": "Country"
+        },
+        "x": {"aggregate": "sum","field": "growth", "title": "growth"
+        }
+      }
+    }]
+  }

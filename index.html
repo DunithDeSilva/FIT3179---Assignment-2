@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>How population , growth, income and health expenditure contribute to poverty</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+<body>
+
+ <div class="page">
+
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>How population , growth, income and health expenditure contribute to poverty</h1>
+        <p>Visualizations and insights in to what affects poverty</p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Population Vs Poverty</h2>
+            <p>More than 40 percent of the global poor live in economies affected by fragility, conflict and violence, and that number is expected to rise to 67 percent in the next decade. Those economies have just 10 percent of the world’s population.
+              Middle-income countries such as India and Nigeria will be significantly affected; middle-income countries may be home to 82% of the new poor.
+              We can see that the poorest countries are mainly in the african continent and each of the african countires have a very low populaation. but when combined is alot and their growth rate is the highest
+            </p>
+
+            <p>The visulaization on the right provides countries and their population that can be filtered by their continents and ranks</p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+       <!-- pure grid group -->
+       <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div id="vis4"  class="vis-container"></div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+
+     <!-- pure grid group -->
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Population Vs Annual Income</h1>
+        <p>Income is measured at the household level, as the sum from all different sources accruing over a certain period of time. Wages are only one of these sources. Other sources include income from self-employment, income from capital and state transfers, such as social security. 
+           In developed countries, wages represent the largest source of income - up to 70 or 80 per cent of total pre-tax and post-transfers income - for households with at least one member in the labour force. In emerging and developing economies, the contribution of wages to household income is smaller, ranging from about 50 to 60 per cent in Argentina or Brazil to about 40 percent in Peru and 30 per cent in Vietnam.  
+           Hence higher wages are one part of the multiple components of a strategy to reduce poverty or inequality. The creation of wage employment (as opposed to other types of employment, like self-employment) and fiscal redistribution through taxes and social transfers also play a key role. 
+        </p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div id="vis2"  class="vis-container"></div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Population Vs Health Expenditure % of GDP</h1>
+        <p>
+          Poor health would reduce a household’s capacity to earn income and accumulate wealth by 
+          limiting work, raising medical expenses and reducing savings. Individuals affected by certain 
+          diseases, such as malaria, tuberculosis, and HIV/AIDS, may never develop the capacity to earn 
+          enough income to get out of the illness–poverty trap. This point was well recognized by the 
+          Commission on Macroeconomics and Health. Moreover, economists, especially those who work in 
+          sustainable economic growth theory, have increasingly recognized health as a form of human capital.
+           As such, better health increases the productivity of other forms of capital and it contributes to 
+           economic growth. Healthier children have higher rates of school attendance and improved cognitive
+            development which lead to a higher rate of return on education and makes investment in education 
+            more attractive.  Therefore we can see the countries with low health expenditure are the ones with 
+            the highest poverty
+        </p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    
+    <!-- pure grid group -->
+    <div class="pure-g">
+      
+      <div class="pure-u-1">
+        <div id="vis3"  class="vis-container"></div>
+     
+    
+    </div>
+    <!-- end pure grid group -->
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/DunithDeSilva" target="_blank">Dunithra De Silva</a>. All data sources were sourced from  <a href="https://www.worldbank.org" target="_blank">the worldbank</href>.</p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "./pop_graphg.vg.json";
+  var specVis2= "./choropleth_map.vg.json";
+  var specVis3= "./interscatter.vg.json";
+  var specVis4= "./population_map.vg.json";
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  // vegaEmbed('#vis4', specVis2, {"actions": false}).then(function(result) {
+  //   // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  // }).catch(console.error);
+</script>
+</body>
+</html>
